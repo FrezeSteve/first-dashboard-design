@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
+import IndexContextFunc from "../context";
 
 export default function Header() {
     const [dropDown, setDropDown] = useState(false);
     const dropDownTarget = useRef(null);
+    const { setIsSeen } = IndexContextFunc();
 
     return (
         <div className="flex justify-between items-center p-4 shadow border-b-[0.5px] border-b-gray-100">
-            <div>
+            <div onClick={() => setIsSeen((prev) => !prev)}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 md:w-8 md:h-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>

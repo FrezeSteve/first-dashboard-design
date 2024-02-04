@@ -1,3 +1,7 @@
+import IndexContextFunc from "../context";
+
 export default function SideBar() {
-    return <div className="bg-red-500 hidden lg:block col-span-3">SideBard</div>;
+    const { isSeen } = IndexContextFunc();
+
+    return <div className={`bg-red-500 col-span-3 ${isSeen ? "hidden" : "col-span-3"}`}>SideBard</div>;
 }
