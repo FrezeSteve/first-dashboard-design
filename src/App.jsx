@@ -1,9 +1,12 @@
+import Header from "./components/Header";
+import SideBar from "./components/Sidebar";
+
 export default function App() {
     return (
-        <div className="flex w-screen h-screen overflow-hidden">
-            <div className="bg-red-500 hidden md:block">SideBard</div>
-            <div className="bg-blue-500 grow">
-                <div>Header</div>
+        <div className="grid grid-cols-12 w-screen h-screen overflow-hidden">
+            <SideBar />
+            <div className="col-span-12 md:col-span-9">
+                <Header />
                 <div>Main Body</div>
             </div>
         </div>
