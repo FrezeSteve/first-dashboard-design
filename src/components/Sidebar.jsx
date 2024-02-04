@@ -1,3 +1,3 @@
 export default function SideBar() {
-    return <div className="bg-red-500 hidden md:block col-span-3">SideBard</div>;
+    return <div className="bg-red-500 hidden lg:block col-span-3">SideBard</div>;
 }

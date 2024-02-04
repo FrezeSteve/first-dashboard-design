@@ -1,4 +1,9 @@
+import { useRef, useState } from "react";
+
 export default function Header() {
+    const [dropDown, setDropDown] = useState(false);
+    const dropDownTarget = useRef(null);
+
     return (
         <div className="flex justify-between items-center p-4 shadow border-b-[0.5px] border-b-gray-100">
             <div>
@@ -15,14 +20,26 @@ export default function Header() {
                         <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75"></span>
                     </span>
                 </div>
-                <div>
-                    <div className="flex gap-1 items-center">
+                <button
+                    className="relative"
+                    onClick={function (event) {
+                        event.preventDefault();
+                        if (Array.from(dropDownTarget.current.children).includes(event.target)) setDropDown(true);
+                        else setDropDown(false);
+                    }}
+                    onBlur={() => setDropDown(false)}
+                    onFocus={() => setDropDown(true)}
+                >
+                    <div ref={dropDownTarget} className="flex gap-1 items-center cursor-pointer">
                         <span className="text-xl md:text-2xl">admin</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[22px] h-[22px] md:w-[26px] md:h-[26px]">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </div>
-                </div>
+                    <ul className={`absolute text-nowrap w-fit min-w-[10rem] max-w-[22rem] top-10 -right-2 bg-black text-white md:bg-white md:text-black md:shadow border-[0.5px] border-gray-100 shadow rounded-lg py-3 ${dropDown ? "flex" : "hidden"} flex-col`}>
+                        <li className="md:hover:bg-gray-50 hover:bg-gray-800 p-2">Logout</li>
+                    </ul>
+                </button>
             </div>
         </div>
     );
