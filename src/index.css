@@ -4,3 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.customHeightSM{
+    height: calc(100vh - 61px);
+}
+
+.customHeight{
+    height: calc(100vh - 65px);
+}

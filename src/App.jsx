@@ -7,7 +7,7 @@ export default function App() {
             <SideBar />
             <div className="col-span-12 md:col-span-9">
                 <Header />
-                <div>Main Body</div>
+                <div className="bg-gray-100 customHeightSM md:customHeight">Main Body</div>
             </div>
         </div>
     );
