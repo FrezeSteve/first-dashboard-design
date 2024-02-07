@@ -6,7 +6,22 @@ export default {
             sans: ["Poppins", "sans-serif"],
             mono: ["Rokkitt", "monospace"],
         },
-        extend: {},
+        extend: {
+            customHeight: {
+                height: "calc(100vh - 65px)",
+            },
+        },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }) {
+            addUtilities({
+                ".customHeight": {
+                    height: "calc(100vh - 61px)",
+                    "@screen md": {
+                        height: "calc(100vh - 65px)",
+                    },
+                },
+            });
+        },
+    ],
 };

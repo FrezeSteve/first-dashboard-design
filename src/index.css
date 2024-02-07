@@ -4,14 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.customHeightSM {
-    height: calc(100vh - 61px);
-}
 
 .text-nowrap {
     text-wrap: nowrap;
-}
-
-.customHeight {
-    height: calc(100vh - 65px);
 }
