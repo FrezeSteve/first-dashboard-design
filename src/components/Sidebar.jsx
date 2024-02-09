@@ -124,7 +124,7 @@ export default function SideBar() {
 
     return (
         <div className={`relative bg-[#222e3c] text-white overflow-y-auto ${isSeen ? "hidden" : "flex flex-col col-span-12 md:col-span-4 lg:col-span-3"}`}>
-            <div className="py-6 px-8 text-lg font-semibold">NCIC Performance Appraisal System</div>
+            <div className="pt-6 pb-2 px-8 text-lg font-semibold">NCIC Performance Appraisal System</div>
             <div className="block md:hidden absolute right-4 top-4" onClick={() => setIsSeen(true)}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
